@@ -10,6 +10,10 @@ pip install --user whisper2subs
 
 ## Usage
 
+```shell
+whisper2subs --help
+```
+
 ### Translate
 
 In order to perform translations into languages **other than English**, it's required to **provide an API key from DeepL**. Using the `--deepl-apikey` option or with the `DEEPL_APIKEY` environment variable. You can [**create a free account**](https://www.deepl.com/en/pro?cta=header-pro-button/) to get an API key.
@@ -26,7 +30,13 @@ If the language of the input file is not specified Whisper will try to detect it
 whisper2subs -l ja -m large-v2 -t es --deepl-apikey "yout-api-key" input.mp4 subs/
 ```
 
-For more options:
+Change output format to `str` only:
+
+```shell
+whisper2subs -l ja -t es --output-format srt --deepl-apikey "yout-api-key" input.mp4 subs/
+```
+
+For more information:
 
 ```shell
 whisper2subs --help
