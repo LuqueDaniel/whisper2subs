@@ -11,8 +11,4 @@ def export_subtitles(
     output_format: str = "all",
 ) -> None:
     writer = get_writer(output_format, str(output_filename.parent))
-    writer(
-        transcribed_audio,
-        str(output_filename.name),
-        {"max_line_width": None, "max_line_count": None, "highlight_words": False},
-    )
+    writer(transcribed_audio, str(output_filename.name))
