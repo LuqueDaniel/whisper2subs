@@ -1,3 +1,8 @@
+![PyPI](https://img.shields.io/pypi/v/whisper2subs?style=flat-square)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/whisper2subs?style=flat-square)
+![GitHub](https://img.shields.io/github/license/LuqueDaniel/whisper2subs?style=flat-square)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black?style=flat-square)
+
 # whisper2subs
 
 A CLI tool that transcribes audio using [`openai-whisper`](https://github.com/openai/whisper) and translates it using [DeepL](https://www.deepl.com/docs-api).
