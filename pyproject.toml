@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools >= 67.6.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper2subs"
+description = "Transcribes audio using Whisper and translates it using DeepL."
+authors = [{name = "Daniel Luque", email = "danielluque14@gmail.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["whisper", "subs", "cli", "translate", "transcribe"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+requires-python = ">=3.8,<3.11"
+dependencies = [
+    "openai-whisper@git+https://github.com/openai/whisper",
+    "deepl >=1.14.0",
+    "Click >=8.1.3",
+]
+dynamic = ["version"]
+
+[project.urls]
+"Source Code"  = "https://github.com/LuqueDaniel/lnmc"
+"Issue Tracker" = "https://github.com/LuqueDaniel/lnmc/issues"
+Documentation = "https://github.com/LuqueDaniel/lnmc/blob/master/README.md"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit >=3.2.2",
+    "black >=23.3.0",
+    "isort >=5.12.0",
+    "ruff >=0.0.261",
+    "mypy >=1.2.0",
+]
+
+[project.scripts]
+whisper2subs = "whisper2subs.cli:whisper2subs"
+
+[tool.setuptools]
+packages = ["whisper2subs"]
+dynamic = {version = {attr = "whisper2subs.__version__"}}
+
+[tool.black]
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+known_third_party = ["click", "whisper", "deepl"]
+
+[tool.ruff]
+target-version = "py38"
+src = ["whisper2subs"]
+fix = false
+line-length = 88  # its default
+select = ["F", "E", "W", "C", "B", "N"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true

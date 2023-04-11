@@ -1,0 +1,27 @@
+# Python
+__pycache__
+build
+dist
+.venv
+*.egg-info
+
+# Tests
+.pytest_cache
+tests/src
+tests/dst
+.coverage
+coverage.lcov
+
+# Tools
+.python-version
+.ruff_cache/
+.mypy_cache
+.tox/
+
+# Editos
+.vscode
+
+# test files
+input/
+output/
+.env-test
