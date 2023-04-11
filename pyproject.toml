@@ -33,9 +33,9 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-"Source Code"  = "https://github.com/LuqueDaniel/lnmc"
-"Issue Tracker" = "https://github.com/LuqueDaniel/lnmc/issues"
-Documentation = "https://github.com/LuqueDaniel/lnmc/blob/master/README.md"
+"Source Code"  = "https://github.com/LuqueDaniel/whisper2subs"
+"Issue Tracker" = "https://github.com/LuqueDaniel/whisper2subs/issues"
+Documentation = "https://github.com/LuqueDaniel/whisper2subs/blob/main/README.md"
 
 [project.optional-dependencies]
 dev = [
