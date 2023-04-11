@@ -1,6 +1,6 @@
-![PyPI](https://img.shields.io/pypi/v/whisper2subs?style=flat-square)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/whisper2subs?style=flat-square)
-![GitHub](https://img.shields.io/github/license/LuqueDaniel/whisper2subs?style=flat-square)
+[![PyPI](https://img.shields.io/pypi/v/whisper2subs?style=flat-square)](https://pypi.org/project/whisper2subs/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/whisper2subs?style=flat-square)](https://pypi.org/project/whisper2subs/)
+[![PyPI - License](https://img.shields.io/pypi/l/whisper2subs?style=flat-square)](https://github.com/LuqueDaniel/whisper2subs/blob/main/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black?style=flat-square)
 
 # whisper2subs
