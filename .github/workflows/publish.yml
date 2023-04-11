@@ -20,15 +20,15 @@ jobs:
         run: python -m pip install --upgrade pip build
       - name: 📦 Build package
         run: python -m build --sdist --wheel --outdir dist/
-      - name: Generate checksum
-        run: |
-          cd dist/
-          find . -name '*.whl' -exec sh -c 'sha256sum "$0" > "${0%}.sha256"' {} \;
-          cd ..
       - name: 🚀 Publish package on PyPi
         uses: pypa/gh-action-pypi-publish@v1.8.4
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Generating checksum
+        run: |
+          cd dist/
+          find . -name '*.whl' -exec sh -c 'sha256sum "$0" > "${0%}.sha256"' {} \;
+          cd ..
       - name: 📝 Create GitHub release
         uses: ncipollo/release-action@v1
         with:
