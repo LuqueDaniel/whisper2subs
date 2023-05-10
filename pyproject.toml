@@ -10,7 +10,7 @@ readme = "README.md"
 license = {text = "MIT"}
 keywords = ["whisper", "subs", "cli", "translate", "transcribe"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: GPU :: NVIDIA CUDA",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
@@ -42,7 +42,7 @@ dev = [
     "pre-commit >=3.2.2",
     "black >=23.3.0",
     "isort >=5.12.0",
-    "ruff >=0.0.261",
+    "ruff >=0.0.265",
     "mypy >=1.2.0",
 ]
 
