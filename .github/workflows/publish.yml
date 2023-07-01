@@ -21,7 +21,7 @@ jobs:
       - name: 📦 Build package
         run: python -m build --sdist --wheel --outdir dist/
       - name: 🚀 Publish package on PyPi
-        uses: pypa/gh-action-pypi-publish@v1.8.6
+        uses: pypa/gh-action-pypi-publish@v1.8.7
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
       - name: Generating checksum
