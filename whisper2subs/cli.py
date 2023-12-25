@@ -116,9 +116,13 @@ def whisper2subs(
 
     if translate_to == "EN":
         click.echo("The English translation is done with Whisper instead of DeepL.")
+
     click.echo(f"Performing {task} task.")
     transcribed_audio: TranscribeResult = transcriber.transcribe(
-        input_file, task, language, initial_prompt
+        input_file,
+        task,
+        language,
+        initial_prompt,
     )
 
     click.echo(f"Exporting files with audio transcription to {output_directory}.")
@@ -130,7 +134,9 @@ def whisper2subs(
         translated_audio = _translate(
             translate_to, deepl_apikey, transcribed_audio, initial_prompt
         )
+
         click.echo(f"Exporting translated files to {output_directory}")
+
         export_subtitles(
             output_directory.joinpath(f"{translate_to}_{input_file.name}"),
             translated_audio,
