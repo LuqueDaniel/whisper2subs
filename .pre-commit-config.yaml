@@ -15,24 +15,24 @@ repos:
         args:
           - --unsafe
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.265
+    rev: v0.1.9
     hooks:
       - id: ruff
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 23.12.1
     hooks:
       - id: black
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 5.13.2
     hooks:
       - id: isort
         name: isort (python)
         args: ["--profile", "black", "--filter-files"]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.2.0"
+    rev: "v1.8.0"
     hooks:
       - id: mypy
         args: ["--strict", "--ignore-missing-imports"]
         additional_dependencies: [
-          "Click >=8.1.3",
+          "Click >=8.1.7",
         ]

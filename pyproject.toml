@@ -19,16 +19,17 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Multimedia :: Sound/Audio",
     "Topic :: Multimedia :: Video",
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
-requires-python = ">=3.8,<3.11"
+requires-python = ">=3.8,<3.12"
 dependencies = [
-    "openai-whisper ==20230314",
-    "deepl >=1.14.0",
-    "Click >=8.1.3",
+    "openai-whisper ==20231117",
+    "deepl >=1.16.1",
+    "Click >=8.1.7"
 ]
 dynamic = ["version"]
 
@@ -39,11 +40,11 @@ Documentation = "https://github.com/LuqueDaniel/whisper2subs/blob/main/README.md
 
 [project.optional-dependencies]
 dev = [
-    "pre-commit >=3.2.2",
-    "black >=23.3.0",
-    "isort >=5.12.0",
-    "ruff >=0.0.265",
-    "mypy >=1.2.0",
+    "pre-commit >=3.6.0",
+    "black >=23.12.1",
+    "isort >=5.13.2",
+    "ruff >=0.1.9",
+    "mypy >=1.8.0",
 ]
 
 [project.scripts]
