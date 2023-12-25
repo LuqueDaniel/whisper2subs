@@ -24,12 +24,15 @@ def _check_deepl_apikey(ctx: click.Context, param: click.Option, value: str) -> 
 
 
 def _translate(
-    translate_to: str, deepl_apikey: str, transcribed_audio: TranscribeResult
+    translate_to: str,
+    deepl_apikey: str,
+    transcribed_audio: TranscribeResult,
+    context: str,
 ) -> TranscribeResult:
     click.echo(f"Translating transcribed audio to {translate_to}")
     try:
         translated_audio = deepl_translate(
-            transcribed_audio, translate_to, deepl_apikey
+            transcribed_audio, translate_to, deepl_apikey, context
         )
     except deepl.exceptions.AuthorizationException as err:
         raise click.exceptions.ClickException(
@@ -125,9 +128,7 @@ def whisper2subs(
 
     if translate_to and deepl_apikey and translate_to != "EN":
         translated_audio = _translate(
-            translate_to,
-            deepl_apikey,
-            transcribed_audio,
+            translate_to, deepl_apikey, transcribed_audio, initial_prompt
         )
         click.echo(f"Exporting translated files to {output_directory}")
         export_subtitles(
