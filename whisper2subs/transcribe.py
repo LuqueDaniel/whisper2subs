@@ -19,13 +19,16 @@ class Transcriber:
         task: str = "transcribe",
         language: Union[str, None] = None,
         initial_prompt: Union[str, None] = None,
+        word_timestamps: bool = False,
     ) -> TranscribeResult:
-        result: TranscribeResult = self.model.transcribe(
-            audio=str(input_file),
-            verbose=False,  # only display progress bar
-            condition_on_previous_text=True,
-            language=language,
-            task=task,
-            initial_prompt=initial_prompt,
-        )
-        return result
+        args = {
+            "audio": str(input_file),
+            "verbose": False,  # only display progress bar
+            "condition_on_previous_text": True,
+            "language": language,
+            "task": task,
+            "initial_prompt": initial_prompt,
+            "word_timestamps": word_timestamps,
+        }
+
+        return self.model.transcribe(**args)
