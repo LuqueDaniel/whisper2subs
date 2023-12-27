@@ -71,6 +71,7 @@ select = ["F", "E", "W", "C", "B", "N"]
 [tool.mypy]
 strict = true
 ignore_missing_imports = true
+exclude = ["./build"]
 
 [[tool.mypy.overrides]]
 module = ["deepl"]
