@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade $PYTHON_DEPENDENCIES
       - name: Lint (ruff)
-        run: ruff --format=github .
+        run: ruff check --output-format github .
       - name: Lint (mypy)
         run: mypy .
   format:
