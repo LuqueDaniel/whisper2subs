@@ -7,7 +7,6 @@ on:
 
 env:
   MIN_SUPPORTED_PYTHON: "3.8"
-  PYTHON_DEPENDENCIES: "pip .[dev]"
 
 jobs:
   lint:
@@ -21,7 +20,7 @@ jobs:
           python-version: ${{ env.MIN_SUPPORTED_PYTHON }}
           cache: pip
       - name: Install dependencies
-        run: python -m pip install --upgrade $PYTHON_DEPENDENCIES
+        run: python -m pip install ruff mypy
       - name: Lint (ruff)
         run: ruff check --output-format github .
       - name: Lint (mypy)
@@ -37,7 +36,7 @@ jobs:
           python-version: ${{ env.MIN_SUPPORTED_PYTHON }}
           cache: pip
       - name: Install dependencies
-        run: python -m pip install --upgrade $PYTHON_DEPENDENCIES
+        run: python -m pip install black isort
       - name: Format (black)
         run: python -m black --check --diff .
       - name: Format (isort)
