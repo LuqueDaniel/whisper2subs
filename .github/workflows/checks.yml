@@ -1,0 +1,44 @@
+name: 📋 PR Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  MIN_SUPPORTED_PYTHON: "3.8"
+  PYTHON_DEPENDENCIES: "pip .[dev]"
+
+jobs:
+  lint:
+    name: 🔍 Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Set up Python ${{ env.MIN_SUPPORTED_PYTHON }}
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: ${{ env.MIN_SUPPORTED_PYTHON }}
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --upgrade $PYTHON_DEPENDENCIES
+      - name: Lint (ruff)
+        run: ruff --format=github .
+      - name: Lint (mypy)
+        run: mypy .
+  format:
+    name: 🎨 Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Set up Python ${{ env.MIN_SUPPORTED_PYTHON }}
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: ${{ env.MIN_SUPPORTED_PYTHON }}
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --upgrade $PYTHON_DEPENDENCIES
+      - name: Format (black)
+        run: python -m black --check --diff .
+      - name: Format (isort)
+        run: python -m isort --check --diff .
