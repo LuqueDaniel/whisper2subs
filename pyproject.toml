@@ -28,8 +28,8 @@ classifiers = [
 requires-python = ">=3.8,<3.12"
 dependencies = [
     "openai-whisper ==20231117",
-    "deepl >=1.16.1",
-    "Click >=8.1.7"
+    "deepl ~=1.16.1",
+    "Click ~=8.1.7"
 ]
 dynamic = ["version"]
 
@@ -40,7 +40,7 @@ Documentation = "https://github.com/LuqueDaniel/whisper2subs/blob/main/README.md
 
 [project.optional-dependencies]
 dev = [
-    "pre-commit ==3.5.0",
+    "pre-commit ==3.5.0",  # <= py38
     "black >=23.12.1",
     "isort >=5.13.2",
     "ruff >=0.1.9",
@@ -71,3 +71,7 @@ select = ["F", "E", "W", "C", "B", "N"]
 [tool.mypy]
 strict = true
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["deepl"]
+follow_imports = "skip"

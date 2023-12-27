@@ -20,7 +20,7 @@ class Transcriber:
         language: Union[str, None] = None,
         initial_prompt: Union[str, None] = None,
         word_timestamps: bool = False,
-    ) -> TranscribeResult:
+    ) -> Any:
         args = {
             "audio": str(input_file),
             "verbose": False,  # only display progress bar
