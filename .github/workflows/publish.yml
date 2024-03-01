@@ -33,7 +33,7 @@ jobs:
           find . -name '*.whl' -exec sh -c 'sha256sum "$0" > "${0%}.sha256"' {} \;
           cd ..
       - name: 📝 Create GitHub release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
