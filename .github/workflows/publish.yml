@@ -13,7 +13,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.6
       - name: Set up Python ${{ env.MIN_SUPPORTED_PYTHON }}
         uses: actions/setup-python@v5
         with:
