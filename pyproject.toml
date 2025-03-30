@@ -27,7 +27,7 @@ classifiers = [
 ]
 requires-python = ">=3.8,<3.12"
 dependencies = [
-    "openai-whisper ==20231117",
+    "openai-whisper ==20240930",
     "deepl ~=1.16.1",
     "Click ~=8.1.7"
 ]
